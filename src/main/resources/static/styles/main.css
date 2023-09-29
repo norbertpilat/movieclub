@@ -87,6 +87,46 @@ i powinna zajmować większość dostępnej przestrzeni
 }
 /*FOOTER END*/
 
+/*Listing START*/
+/*Nagłówek*/
+.list-heading,
+.list-description {
+    text-align: center;
+    margin: 16px 0;
+}
+/*Usunięcie dekoracji elementów listy (kropki na początku)*/
+.movie-list {
+    list-style-type: none;
+}
+/*Margines i ramka wokół pojedynczego filmu*/
+.movie-list-item {
+    margin-bottom: 16px;
+    display: flex;
+    border: 1px #6d6d6d solid;
+}
+/*Plakat - usuniecie paddingu*/
+.movie-list-item-poster {
+    display: block;
+    max-width: 200px;
+}
+/*Karta filmu*/
+.movie-list-item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+.movie-list-item-content > * {
+    margin: 8px 0;
+}
+.movie-list-item-title {
+    font-size: 1.6rem;
+}
+.movie-list-item-rating {
+    font-size: 1.6rem;
+}
+/*Listing END*/
+
 /*Responsive*/
 @media only screen and (min-width: 992px) {
     /*Na ekranie powyżej 992px ukrywamy przycisk do rozwijania menu*/
