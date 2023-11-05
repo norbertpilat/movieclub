@@ -13,7 +13,8 @@ public class MovieDtoMapper {
                 movie.getDescription(),
                 movie.getYoutubeTrailerId(),
                 movie.getGenre().getName(),
-                movie.isPromoted()
+                movie.isPromoted(),
+                movie.getPoster()
         );
     }
 }

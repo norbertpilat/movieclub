@@ -1,21 +1,18 @@
 package lnp.movieclub.movie.dto;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-@AllArgsConstructor(access= AccessLevel.PUBLIC)
+import org.springframework.web.multipart.MultipartFile;
 @Getter
 @Setter
-public class MovieDto {
-    private Long id;
+public class MovieSaveDto {
     private String title;
     private String originalTitle;
-    private Integer releaseYear;
     private String shortDescription;
     private String description;
     private String youtubeTrailerId;
+    private Integer releaseYear;
     private String genre;
     private boolean promoted;
-    private String poster;
+    private MultipartFile poster;
 }

@@ -17,4 +17,7 @@ public class Genre {
     @Getter
     @Setter
     private String name;
+    @Getter
+    @Setter
+    private String description;
 }
