@@ -23,14 +23,13 @@ public class MovieManagementController {
     }
 
     @GetMapping("/admin/dodaj-film")
-    public String addMovie(Model model){
+    public String addMovie(Model model) {
         List<GenreDto> allGenres = genreService.findAllGenres();
         model.addAttribute("genres", allGenres);
         MovieSaveDto movieSaveDto = new MovieSaveDto();
-        model.addAttribute("movie",movieSaveDto);
+        model.addAttribute("movie", movieSaveDto);
         return "admin/movie-form";
     }
-
     @PostMapping("admin/dodaj-film")
     public String addMovie(MovieSaveDto movie, RedirectAttributes redirectAttributes){
         movieService.addMovie(movie);

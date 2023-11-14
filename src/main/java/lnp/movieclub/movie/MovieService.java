@@ -43,10 +43,11 @@ public class MovieService {
         movie.setPromoted(movieToSave.isPromoted());
         movie.setReleaseYear(movieToSave.getReleaseYear());
         movie.setShortDescription(movieToSave.getShortDescription());
+        movie.setDescription(movieToSave.getDescription());
         movie.setYoutubeTrailerId(movieToSave.getYoutubeTrailerId());
         Genre genre = genreRepository.findByNameIgnoreCase(movieToSave.getGenre()).orElseThrow();
         movie.setGenre(genre);
-        if (movieToSave.getPoster() != null) {
+        if (movieToSave.getPoster() != null && movieToSave.getPoster().getSize() > 0) {
             String savedFileName = fileStorageService.saveImage(movieToSave.getPoster());
             movie.setPoster(savedFileName);
         }
