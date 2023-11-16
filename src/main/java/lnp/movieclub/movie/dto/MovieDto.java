@@ -18,4 +18,6 @@ public class MovieDto {
     private String genre;
     private boolean promoted;
     private String poster;
+    private double avgRating;
+    private int ratingCount;
 }

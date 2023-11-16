@@ -23,6 +23,7 @@ public class CustomSecurityConfig {
 
         http
                 .authorizeHttpRequests(authz -> authz
+                        .requestMatchers("/ocen-film").authenticated()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
                         .requestMatchers("/admin/**").hasAnyRole(EDITOR_ROLE, ADMIN_ROLE)
                         .anyRequest().permitAll()

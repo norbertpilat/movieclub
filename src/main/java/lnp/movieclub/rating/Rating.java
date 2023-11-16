@@ -3,7 +3,6 @@ package lnp.movieclub.rating;
 import jakarta.persistence.*;
 import lnp.movieclub.movie.Movie;
 import lnp.movieclub.user.User;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +10,6 @@ import lombok.Setter;
 @Entity
 @Table(name = "movie_rating")
 @NoArgsConstructor
-@AllArgsConstructor()
 @Getter
 @Setter
 public class Rating {
