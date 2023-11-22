@@ -303,6 +303,9 @@ textarea {
 .mc-form > input[type=file] {
     color: white;
 }
+.edit-genre {
+    text-align: right;
+}
 /*Responsive*/
 
 .mc-form-message {
