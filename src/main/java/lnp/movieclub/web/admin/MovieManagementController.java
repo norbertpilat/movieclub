@@ -39,4 +39,7 @@ public class MovieManagementController {
         );
         return "redirect:/admin";
     }
+
+    //usun film
+    //edytuj film
 }

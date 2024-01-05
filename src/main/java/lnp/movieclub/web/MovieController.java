@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 
 @Controller
 @AllArgsConstructor
@@ -33,5 +35,14 @@ public class MovieController {
             model.addAttribute("userRating",rating);
         }
         return "movie";
+    }
+
+    @GetMapping("/top10")
+    public String findTop10(Model model){
+        List<MovieDto> top10Movies = movieService.findTopMovies(10);
+        model.addAttribute("heading","Filmowe TOP10");
+        model.addAttribute("description","Filmy najlepiej oceniane przez użytkowników");
+        model.addAttribute("movies",top10Movies);
+        return "movie-listing";
     }
 }

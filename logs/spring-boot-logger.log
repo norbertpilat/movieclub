@@ -1,0 +1,487 @@
+2023-11-23 11:24:52,686 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@33e2e2c0 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@52126ec - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:174)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:167)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:133)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:359)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at lnp.movieclub.MovieclubApplication.main(MovieclubApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@33e2e2c0 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@52126ec - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:270)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:248)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:188)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+	Suppressed: java.lang.NumberFormatException: For input string: "1."
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:668)
+		at java.base/java.lang.Integer.parseInt(Integer.java:786)
+		at ch.qos.logback.classic.pattern.NamedConverter.start(NamedConverter.java:92)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:37)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:33)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:90)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:208)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:208)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:170)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:65)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:280)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:243)
+		... 28 common frames omitted
+	Suppressed: java.lang.NumberFormatException: For input string: "1."
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:668)
+		at java.base/java.lang.Integer.parseInt(Integer.java:786)
+		at ch.qos.logback.classic.pattern.NamedConverter.start(NamedConverter.java:92)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:37)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:90)
+		at ch.qos.logback.classic.encoder.PatternLayoutEncoder.start(PatternLayoutEncoder.java:28)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:208)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:208)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:170)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:65)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:280)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:243)
+		... 28 common frames omitted
+2023-11-23 11:25:45,779 ERROR o.s.b.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@566deb0f - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:174)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:167)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:133)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:359)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at lnp.movieclub.MovieclubApplication.main(MovieclubApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@566deb0f - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:270)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:248)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:188)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+	Suppressed: java.lang.NumberFormatException: For input string: "1."
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:668)
+		at java.base/java.lang.Integer.parseInt(Integer.java:786)
+		at ch.qos.logback.classic.pattern.NamedConverter.start(NamedConverter.java:92)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:37)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:33)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:90)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:208)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:208)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:170)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:65)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:280)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:243)
+		... 28 common frames omitted
+2023-11-23 11:26:09,459 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MovieclubApplication using Java 17.0.6 with PID 7332 (/Users/norbx/IdeaProjects/movieclub/target/classes started by norbx in /Users/norbx/IdeaProjects/movieclub)
+2023-11-23 11:26:09,459 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "dev"
+2023-11-23 11:26:09,555 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-23 11:26:09,562 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 7 ms. Found 5 JPA repository interfaces.
+2023-11-23 11:26:09,636 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-11-23 11:26:09,636 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-11-23 11:26:09,636 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-11-23 11:26:09,644 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-11-23 11:26:09,644 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 184 ms
+2023-11-23 11:26:09,667 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2023-11-23 11:26:09,668 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:test user=SA
+2023-11-23 11:26:09,669 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2023-11-23 11:26:09,669 INFO l.l.c.JavaLogger [restartedMain] Set default schema name to PUBLIC
+2023-11-23 11:26:09,717 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,717 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,718 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,719 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,719 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,720 INFO l.l.c.JavaLogger [restartedMain] Successfully acquired change log lock
+2023-11-23 11:26:09,721 INFO l.l.c.JavaLogger [restartedMain] Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2023-11-23 11:26:09,722 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,722 INFO l.l.c.JavaLogger [restartedMain] Reading from PUBLIC.DATABASECHANGELOG
+2023-11-23 11:26:09,723 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,723 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,733 INFO l.l.c.JavaLogger [restartedMain] Table genre created
+2023-11-23 11:26:09,733 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0001_create_table_genre.xml::0001-1::norbx ran successfully in 1ms
+2023-11-23 11:26:09,734 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,734 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,737 INFO l.l.c.JavaLogger [restartedMain] Table movie created
+2023-11-23 11:26:09,737 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0002_create_table_movie.xml::0001-1::norbx ran successfully in 2ms
+2023-11-23 11:26:09,738 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,739 INFO l.l.c.JavaLogger [restartedMain] Table users created
+2023-11-23 11:26:09,741 INFO l.l.c.JavaLogger [restartedMain] Table user_role created
+2023-11-23 11:26:09,743 INFO l.l.c.JavaLogger [restartedMain] Table user_roles created
+2023-11-23 11:26:09,743 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0003_create_tables_users_and_role.xml::0003-1::norbx ran successfully in 5ms
+2023-11-23 11:26:09,743 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,747 INFO l.l.c.JavaLogger [restartedMain] Table movie_rating created
+2023-11-23 11:26:09,747 INFO l.l.c.JavaLogger [restartedMain] Unique constraint added to movie_rating(user_id,movie_id)
+2023-11-23 11:26:09,747 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0004_create_table_movie_rating.xml::0004-1::norbx ran successfully in 3ms
+2023-11-23 11:26:09,748 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,750 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:26:09,751 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0001_genres.sql::raw::includeAll ran successfully in 3ms
+2023-11-23 11:26:09,751 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,764 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:26:09,765 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0002_movies.sql::raw::includeAll ran successfully in 13ms
+2023-11-23 11:26:09,765 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,767 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:26:09,767 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0003_users_and_roles.sql::raw::includeAll ran successfully in 1ms
+2023-11-23 11:26:09,768 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,769 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:26:09,769 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0004_movie_ratings.sql::raw::includeAll ran successfully in 1ms
+2023-11-23 11:26:09,770 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,770 INFO l.l.c.JavaLogger [restartedMain] Update command completed successfully.
+2023-11-23 11:26:09,770 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:26:09,770 INFO l.l.c.JavaLogger [restartedMain] Successfully released change log lock
+2023-11-23 11:26:09,782 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-23 11:26:09,787 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:26:09,787 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-23 11:26:09,797 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:26:09,835 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-23 11:26:09,836 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:26:09,910 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-23 11:26:09,966 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18a61995, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ecf2195, org.springframework.security.web.context.SecurityContextHolderFilter@4f299ed9, org.springframework.security.web.header.HeaderWriterFilter@6d86dea5, org.springframework.security.web.csrf.CsrfFilter@5b75d9c, org.springframework.security.web.authentication.logout.LogoutFilter@67039434, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@637f93fa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@704d611d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f77938d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b72ebd2, org.springframework.security.web.access.ExceptionTranslationFilter@23bd9900, org.springframework.security.web.access.intercept.AuthorizationFilter@7f355bad]
+2023-11-23 11:26:10,002 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:26:10,002 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/img/**']
+2023-11-23 11:26:10,002 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/scripts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:26:10,002 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/scripts/**']
+2023-11-23 11:26:10,002 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/styles/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:26:10,002 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/styles/**']
+2023-11-23 11:26:10,007 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-11-23 11:26:10,019 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-23 11:26:10,022 INFO o.s.b.StartupInfoLogger [restartedMain] Started MovieclubApplication in 0.579 seconds (process running for 175.242)
+2023-11-23 11:26:10,024 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2023-11-23 11:26:30,404 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-23 11:26:30,405 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-11-23 11:26:30,407 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2023-11-23 11:27:36,607 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:27:37,014 WARN o.s.b.f.s.DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-11-23 11:27:37,015 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown initiated...
+2023-11-23 11:27:37,140 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
+2023-11-23 11:27:39,378 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MovieclubApplication using Java 17.0.6 with PID 7370 (/Users/norbx/IdeaProjects/movieclub/target/classes started by norbx in /Users/norbx/IdeaProjects/movieclub)
+2023-11-23 11:27:39,379 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "dev"
+2023-11-23 11:27:39,528 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-23 11:27:39,528 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-23 11:27:39,889 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-23 11:27:39,921 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 28 ms. Found 5 JPA repository interfaces.
+2023-11-23 11:27:40,252 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-11-23 11:27:40,257 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-23 11:27:40,258 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-11-23 11:27:40,258 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-11-23 11:27:40,286 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-11-23 11:27:40,286 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 757 ms
+2023-11-23 11:27:40,362 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-11-23 11:27:40,491 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2023-11-23 11:27:40,493 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-11-23 11:27:40,532 INFO l.l.c.JavaLogger [restartedMain] Set default schema name to PUBLIC
+2023-11-23 11:27:40,860 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,862 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,865 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,867 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,870 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,870 INFO l.l.c.JavaLogger [restartedMain] Successfully acquired change log lock
+2023-11-23 11:27:40,877 INFO l.l.c.JavaLogger [restartedMain] Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2023-11-23 11:27:40,879 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,880 INFO l.l.c.JavaLogger [restartedMain] Reading from PUBLIC.DATABASECHANGELOG
+2023-11-23 11:27:40,881 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,882 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,913 INFO l.l.c.JavaLogger [restartedMain] Table genre created
+2023-11-23 11:27:40,914 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0001_create_table_genre.xml::0001-1::norbx ran successfully in 5ms
+2023-11-23 11:27:40,916 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,917 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,922 INFO l.l.c.JavaLogger [restartedMain] Table movie created
+2023-11-23 11:27:40,923 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0002_create_table_movie.xml::0001-1::norbx ran successfully in 5ms
+2023-11-23 11:27:40,923 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,925 INFO l.l.c.JavaLogger [restartedMain] Table users created
+2023-11-23 11:27:40,927 INFO l.l.c.JavaLogger [restartedMain] Table user_role created
+2023-11-23 11:27:40,930 INFO l.l.c.JavaLogger [restartedMain] Table user_roles created
+2023-11-23 11:27:40,930 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0003_create_tables_users_and_role.xml::0003-1::norbx ran successfully in 6ms
+2023-11-23 11:27:40,931 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,935 INFO l.l.c.JavaLogger [restartedMain] Table movie_rating created
+2023-11-23 11:27:40,936 INFO l.l.c.JavaLogger [restartedMain] Unique constraint added to movie_rating(user_id,movie_id)
+2023-11-23 11:27:40,937 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0004_create_table_movie_rating.xml::0004-1::norbx ran successfully in 6ms
+2023-11-23 11:27:40,937 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,946 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:27:40,947 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0001_genres.sql::raw::includeAll ran successfully in 9ms
+2023-11-23 11:27:40,948 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,965 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:27:40,966 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0002_movies.sql::raw::includeAll ran successfully in 17ms
+2023-11-23 11:27:40,966 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,971 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:27:40,971 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0003_users_and_roles.sql::raw::includeAll ran successfully in 4ms
+2023-11-23 11:27:40,972 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,974 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:27:40,974 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0004_movie_ratings.sql::raw::includeAll ran successfully in 2ms
+2023-11-23 11:27:40,975 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,975 INFO l.l.c.JavaLogger [restartedMain] Update command completed successfully.
+2023-11-23 11:27:40,976 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:27:40,976 INFO l.l.c.JavaLogger [restartedMain] Successfully released change log lock
+2023-11-23 11:27:41,023 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-23 11:27:41,054 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-11-23 11:27:41,056 INFO o.h.c.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2023-11-23 11:27:41,126 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:27:41,200 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-23 11:27:41,341 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:27:41,727 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-23 11:27:41,744 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:27:41,945 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-23 11:27:42,154 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-23 11:27:42,313 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c14d077, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14930e11, org.springframework.security.web.context.SecurityContextHolderFilter@4a359082, org.springframework.security.web.header.HeaderWriterFilter@1a9d21e2, org.springframework.security.web.csrf.CsrfFilter@1e427b50, org.springframework.security.web.authentication.logout.LogoutFilter@4aedd786, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@231bccfa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3de4c0b7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8e163ba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69927c65, org.springframework.security.web.access.ExceptionTranslationFilter@49d8014d, org.springframework.security.web.access.intercept.AuthorizationFilter@5b1a72a6]
+2023-11-23 11:27:42,443 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:27:42,444 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/img/**']
+2023-11-23 11:27:42,444 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/scripts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:27:42,444 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/scripts/**']
+2023-11-23 11:27:42,444 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/styles/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:27:42,444 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/styles/**']
+2023-11-23 11:27:42,462 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-11-23 11:27:42,475 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-11-23 11:27:42,489 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-23 11:27:42,497 INFO o.s.b.StartupInfoLogger [restartedMain] Started MovieclubApplication in 3.466 seconds (process running for 4.065)
+2023-11-23 11:27:45,165 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-23 11:27:45,165 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-11-23 11:27:45,166 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-11-23 11:28:25,069 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:28:25,470 WARN o.s.b.f.s.DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-11-23 11:28:25,471 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-11-23 11:28:25,599 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-11-23 11:28:27,955 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MovieclubApplication using Java 17.0.6 with PID 7382 (/Users/norbx/IdeaProjects/movieclub/target/classes started by norbx in /Users/norbx/IdeaProjects/movieclub)
+2023-11-23 11:28:27,956 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "dev"
+2023-11-23 11:28:28,086 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-23 11:28:28,086 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-23 11:28:28,424 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-23 11:28:28,454 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2023-11-23 11:28:28,792 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-11-23 11:28:28,796 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-23 11:28:28,797 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-11-23 11:28:28,797 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-11-23 11:28:28,824 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-11-23 11:28:28,825 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 739 ms
+2023-11-23 11:28:28,902 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-11-23 11:28:29,020 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2023-11-23 11:28:29,022 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-11-23 11:28:29,058 INFO l.l.c.JavaLogger [restartedMain] Set default schema name to PUBLIC
+2023-11-23 11:28:29,358 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,360 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,363 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,365 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,369 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,369 INFO l.l.c.JavaLogger [restartedMain] Successfully acquired change log lock
+2023-11-23 11:28:29,376 INFO l.l.c.JavaLogger [restartedMain] Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2023-11-23 11:28:29,378 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,379 INFO l.l.c.JavaLogger [restartedMain] Reading from PUBLIC.DATABASECHANGELOG
+2023-11-23 11:28:29,380 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,381 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,410 INFO l.l.c.JavaLogger [restartedMain] Table genre created
+2023-11-23 11:28:29,411 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0001_create_table_genre.xml::0001-1::norbx ran successfully in 4ms
+2023-11-23 11:28:29,414 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,414 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,419 INFO l.l.c.JavaLogger [restartedMain] Table movie created
+2023-11-23 11:28:29,420 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0002_create_table_movie.xml::0001-1::norbx ran successfully in 4ms
+2023-11-23 11:28:29,420 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,422 INFO l.l.c.JavaLogger [restartedMain] Table users created
+2023-11-23 11:28:29,424 INFO l.l.c.JavaLogger [restartedMain] Table user_role created
+2023-11-23 11:28:29,426 INFO l.l.c.JavaLogger [restartedMain] Table user_roles created
+2023-11-23 11:28:29,427 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0003_create_tables_users_and_role.xml::0003-1::norbx ran successfully in 5ms
+2023-11-23 11:28:29,427 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,431 INFO l.l.c.JavaLogger [restartedMain] Table movie_rating created
+2023-11-23 11:28:29,433 INFO l.l.c.JavaLogger [restartedMain] Unique constraint added to movie_rating(user_id,movie_id)
+2023-11-23 11:28:29,433 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0004_create_table_movie_rating.xml::0004-1::norbx ran successfully in 5ms
+2023-11-23 11:28:29,434 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,442 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:28:29,443 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0001_genres.sql::raw::includeAll ran successfully in 9ms
+2023-11-23 11:28:29,443 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,461 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:28:29,461 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0002_movies.sql::raw::includeAll ran successfully in 17ms
+2023-11-23 11:28:29,462 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,467 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:28:29,468 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0003_users_and_roles.sql::raw::includeAll ran successfully in 5ms
+2023-11-23 11:28:29,469 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,470 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:28:29,471 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0004_movie_ratings.sql::raw::includeAll ran successfully in 2ms
+2023-11-23 11:28:29,472 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,472 INFO l.l.c.JavaLogger [restartedMain] Update command completed successfully.
+2023-11-23 11:28:29,473 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:28:29,473 INFO l.l.c.JavaLogger [restartedMain] Successfully released change log lock
+2023-11-23 11:28:29,524 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-23 11:28:29,553 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-11-23 11:28:29,554 INFO o.h.c.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2023-11-23 11:28:29,626 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:28:29,698 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-23 11:28:29,838 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:28:30,223 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-23 11:28:30,240 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:28:30,437 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-23 11:28:30,646 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-23 11:28:30,804 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ef05d9c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e5ec4e3, org.springframework.security.web.context.SecurityContextHolderFilter@10e5ce1a, org.springframework.security.web.header.HeaderWriterFilter@236782ba, org.springframework.security.web.csrf.CsrfFilter@8660cfa, org.springframework.security.web.authentication.logout.LogoutFilter@ce9cfeb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4bb4e4e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49d8014d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b6160b0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62a19a13, org.springframework.security.web.access.ExceptionTranslationFilter@3cbb7eb5, org.springframework.security.web.access.intercept.AuthorizationFilter@345c844d]
+2023-11-23 11:28:30,938 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:28:30,938 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/img/**']
+2023-11-23 11:28:30,938 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/scripts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:28:30,939 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/scripts/**']
+2023-11-23 11:28:30,939 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/styles/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:28:30,939 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/styles/**']
+2023-11-23 11:28:30,956 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-11-23 11:28:30,969 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-11-23 11:28:30,980 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-23 11:28:30,988 INFO o.s.b.StartupInfoLogger [restartedMain] Started MovieclubApplication in 3.311 seconds (process running for 3.637)
+2023-11-23 11:28:32,928 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-23 11:28:32,928 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-11-23 11:28:32,930 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2023-11-23 11:31:25,813 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:31:26,214 WARN o.s.b.f.s.DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-11-23 11:31:26,215 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-11-23 11:31:26,337 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-11-23 11:31:29,982 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MovieclubApplication using Java 17.0.6 with PID 7398 (/Users/norbx/IdeaProjects/movieclub/target/classes started by norbx in /Users/norbx/IdeaProjects/movieclub)
+2023-11-23 11:31:29,983 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "dev"
+2023-11-23 11:31:30,114 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-23 11:31:30,114 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-23 11:31:30,453 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-23 11:31:30,483 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2023-11-23 11:31:30,811 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-11-23 11:31:30,815 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-23 11:31:30,816 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-11-23 11:31:30,816 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-11-23 11:31:30,843 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-11-23 11:31:30,844 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 729 ms
+2023-11-23 11:31:30,924 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-11-23 11:31:31,039 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2023-11-23 11:31:31,040 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-11-23 11:31:31,076 INFO l.l.c.JavaLogger [restartedMain] Set default schema name to PUBLIC
+2023-11-23 11:31:31,397 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,399 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,402 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,404 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,407 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,407 INFO l.l.c.JavaLogger [restartedMain] Successfully acquired change log lock
+2023-11-23 11:31:31,414 INFO l.l.c.JavaLogger [restartedMain] Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2023-11-23 11:31:31,416 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,417 INFO l.l.c.JavaLogger [restartedMain] Reading from PUBLIC.DATABASECHANGELOG
+2023-11-23 11:31:31,418 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,419 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,453 INFO l.l.c.JavaLogger [restartedMain] Table genre created
+2023-11-23 11:31:31,453 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0001_create_table_genre.xml::0001-1::norbx ran successfully in 4ms
+2023-11-23 11:31:31,456 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,457 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,462 INFO l.l.c.JavaLogger [restartedMain] Table movie created
+2023-11-23 11:31:31,462 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0002_create_table_movie.xml::0001-1::norbx ran successfully in 4ms
+2023-11-23 11:31:31,463 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,465 INFO l.l.c.JavaLogger [restartedMain] Table users created
+2023-11-23 11:31:31,466 INFO l.l.c.JavaLogger [restartedMain] Table user_role created
+2023-11-23 11:31:31,469 INFO l.l.c.JavaLogger [restartedMain] Table user_roles created
+2023-11-23 11:31:31,469 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0003_create_tables_users_and_role.xml::0003-1::norbx ran successfully in 6ms
+2023-11-23 11:31:31,470 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,474 INFO l.l.c.JavaLogger [restartedMain] Table movie_rating created
+2023-11-23 11:31:31,475 INFO l.l.c.JavaLogger [restartedMain] Unique constraint added to movie_rating(user_id,movie_id)
+2023-11-23 11:31:31,476 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/changelog/0004_create_table_movie_rating.xml::0004-1::norbx ran successfully in 6ms
+2023-11-23 11:31:31,476 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,485 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:31:31,486 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0001_genres.sql::raw::includeAll ran successfully in 8ms
+2023-11-23 11:31:31,486 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,504 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:31:31,504 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0002_movies.sql::raw::includeAll ran successfully in 17ms
+2023-11-23 11:31:31,505 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,510 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:31:31,511 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0003_users_and_roles.sql::raw::includeAll ran successfully in 5ms
+2023-11-23 11:31:31,511 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,513 INFO l.l.c.JavaLogger [restartedMain] Custom SQL executed
+2023-11-23 11:31:31,513 INFO l.l.c.JavaLogger [restartedMain] ChangeSet db/testdata/0004_movie_ratings.sql::raw::includeAll ran successfully in 1ms
+2023-11-23 11:31:31,514 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,515 INFO l.l.c.JavaLogger [restartedMain] Update command completed successfully.
+2023-11-23 11:31:31,516 INFO l.l.c.JavaLogger [restartedMain] Changelog query completed.
+2023-11-23 11:31:31,516 INFO l.l.c.JavaLogger [restartedMain] Successfully released change log lock
+2023-11-23 11:31:31,563 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-23 11:31:31,592 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-11-23 11:31:31,593 INFO o.h.c.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2023-11-23 11:31:31,667 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:31:31,741 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-23 11:31:31,886 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-11-23 11:31:32,268 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-23 11:31:32,286 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:31:32,484 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-23 11:31:32,690 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-23 11:31:32,852 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c6eb477, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e01fa8b, org.springframework.security.web.context.SecurityContextHolderFilter@15c2f006, org.springframework.security.web.header.HeaderWriterFilter@43f8aa83, org.springframework.security.web.csrf.CsrfFilter@1efd18e3, org.springframework.security.web.authentication.logout.LogoutFilter@484f8280, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33da3288, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18f560eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dfdf1f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2cadcfb1, org.springframework.security.web.access.ExceptionTranslationFilter@b8635c4, org.springframework.security.web.access.intercept.AuthorizationFilter@25f8eea7]
+2023-11-23 11:31:32,980 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/img/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:31:32,981 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/img/**']
+2023-11-23 11:31:32,981 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/scripts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:31:32,981 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/scripts/**']
+2023-11-23 11:31:32,981 WARN o.s.s.c.a.w.b.WebSecurity [restartedMain] You are asking Spring Security to ignore Mvc [pattern='/styles/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-23 11:31:32,981 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will not secure Mvc [pattern='/styles/**']
+2023-11-23 11:31:32,999 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-11-23 11:31:33,012 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-11-23 11:31:33,023 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-23 11:31:33,030 INFO o.s.b.StartupInfoLogger [restartedMain] Started MovieclubApplication in 3.417 seconds (process running for 4.06)
+2023-11-23 11:31:33,546 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-23 11:31:33,546 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-11-23 11:31:33,547 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-11-23 11:34:05,158 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-23 11:34:05,553 WARN o.s.b.f.s.DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-11-23 11:34:05,554 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-11-23 11:34:05,683 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

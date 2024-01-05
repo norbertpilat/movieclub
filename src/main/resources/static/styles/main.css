@@ -303,6 +303,9 @@ textarea {
 .mc-form > input[type=file] {
     color: white;
 }
+.edit-genre {
+    position: center;
+}
 /*Responsive*/
 
 .mc-form-message {
@@ -312,6 +315,31 @@ textarea {
 .registration-link {
     text-align: center;
     margin-top: 32px;
+}
+.oknoDialogowe {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    padding: 16px;
+    z-index: 1;
+}
+.option-admin-button {
+    float: right;
+    display: inline-block;
+
+}
+.custom-button {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+.custom-admin-button-element{
+    display: inline-block;
+}
+.custom-button:hover {
+    background-color: lightgray; /* Kolor podświetlenia po najechaniu myszą */
 }
 
 @media only screen and (min-width: 992px) {

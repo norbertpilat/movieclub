@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Dodaj nowy gatunek filmowy</title>
+</head>
+<body>
+<main class="main-content" layout:fragment="content">
+  <h2 class="list-heading">Edytuj gatunek filmowy</h2>
+  <form action="#" th:action="@{/admin/edytuj-gatunek}" method="post" class="mc-form" th:object="${genre}">
+    <p th:field="*{id}"></p>
+    <label for="genreName">Nazwa</label>
+    <input type="text" id="genreName" th:field="*{name}" readonly>
+    <label for="movieShortDescription">Opis - max 500 znaków</label>
+    <textarea id="movieShortDescription" rows="5" th:field="*{description}"></textarea>
+    <button type="submit">Zapisz</button>
+  </form>
+</main>
+</body>
+</html>

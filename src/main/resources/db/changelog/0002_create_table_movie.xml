@@ -17,7 +17,7 @@
             <column name="promoted" type="boolean"/>
             <column name="poster" type="VARCHAR(100)"/>
             <column name="genre_id" type="BIGINT">
-                <constraints nullable="false"
+                <constraints nullable="true"
                              foreignKeyName="fk_movie_genre"
                              referencedTableName="genre"
                              referencedColumnNames="id"/>

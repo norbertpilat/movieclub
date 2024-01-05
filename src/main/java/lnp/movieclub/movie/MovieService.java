@@ -6,6 +6,7 @@ import lnp.movieclub.movie.dto.MovieDto;
 import lnp.movieclub.movie.dto.MovieSaveDto;
 import lnp.movieclub.storage.FileStorageService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -53,4 +54,15 @@ public class MovieService {
         }
         movieRepository.save(movie);
     }
+
+    public List<MovieDto> findTopMovies(int size){
+        Pageable page = Pageable.ofSize(size);
+        return movieRepository.findTopByRating(page).stream()
+                .map(MovieDtoMapper::mapper)
+                .toList();
+    }
+
+    //edytuj film
+    //usun film
+
 }

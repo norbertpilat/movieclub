@@ -4,6 +4,7 @@ import lnp.movieclub.genre.GenreService;
 import lnp.movieclub.genre.dto.GenreDto;
 import lnp.movieclub.movie.MovieService;
 import lnp.movieclub.movie.dto.MovieDto;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,14 +15,10 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class GenreController {
     private final GenreService genreService;
     private final MovieService movieService;
-
-    public GenreController(GenreService genreService, MovieService movieService) {
-        this.genreService = genreService;
-        this.movieService = movieService;
-    }
 
     @GetMapping("/gatunek/{name}")
     public String getGenre(@PathVariable String name, Model model) {

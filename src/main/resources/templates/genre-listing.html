@@ -2,6 +2,7 @@
 <html lang="pl"
       xmlns:th="https://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{layout}">
 <head>
   <title>Gatunki filmowe - MovieClub</title>
@@ -19,6 +20,19 @@
          th:text="${genre.name}">
         Horror
       </a>
+
+      <div class="option-admin-button" sec:authorize="hasRole('ADMIN')">
+        <form class="custom-admin-button-element" th:action="@{|/admin/usun-gatunek/${genre.id}|}" method="post" th:object="${genre}">
+          <button type="submit" class="custom-button">
+            <i class="fa-solid fa-trash fa-lg"></i>
+          </button>
+        </form>
+        <a class="custom-admin-button-element"
+                href="#"
+           th:href="@{|/admin/edytuj-gatunek/${genre.name}|}">
+          <i class="fa-regular fa-pen-to-square"></i>
+        </a>
+      </div>
     </li>
   </ul>
 </main>
