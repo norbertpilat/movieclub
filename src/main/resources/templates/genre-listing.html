@@ -20,12 +20,19 @@
          th:text="${genre.name}">
         Horror
       </a>
-      <a class="edit-genre"
-      href="#"
-         sec:authorize="hasRole('ADMIN')"
-         th:href="@{|/admin/edytuj-gatunek/${genre.name}|}">
-        <i class="fa-regular fa-pen-to-square"></i>
-      </a>
+
+      <div class="option-admin-button" sec:authorize="hasRole('ADMIN')">
+        <form class="custom-admin-button-element" th:action="@{|/admin/usun-gatunek/${genre.id}|}" method="post" th:object="${genre}">
+          <button type="submit" class="custom-button">
+            <i class="fa-solid fa-trash fa-lg"></i>
+          </button>
+        </form>
+        <a class="custom-admin-button-element"
+                href="#"
+           th:href="@{|/admin/edytuj-gatunek/${genre.name}|}">
+          <i class="fa-regular fa-pen-to-square"></i>
+        </a>
+      </div>
     </li>
   </ul>
 </main>

@@ -2,6 +2,10 @@ package lnp.movieclub.genre;
 
 import lnp.movieclub.genre.dto.GenreDto;
 import lnp.movieclub.genre.dto.GenreSaveDto;
+import lnp.movieclub.movie.Movie;
+import lnp.movieclub.movie.MovieRepository;
+import lnp.movieclub.rating.RatingRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,12 +14,12 @@ import java.util.Optional;
 import java.util.stream.StreamSupport;
 
 @Service
+@AllArgsConstructor
 public class GenreService {
     private final GenreRepository genreRepository;
+    private final MovieRepository movieRepository;
+    private final RatingRepository ratingRepository;
 
-    public GenreService(GenreRepository genreRepository) {
-        this.genreRepository = genreRepository;
-    }
     //wyszukanie gatunków po nazwie
     public Optional<GenreDto> findGenreByName(String name){
         return genreRepository.findByNameIgnoreCase(name)
@@ -49,4 +53,21 @@ public class GenreService {
         genreFromDb.setDescription(genre.getDescription());
         genreRepository.save(genreFromDb);
     }
+
+    //usuwanie gatunku
+    @Transactional
+    public void deleteGenre(Long id){
+        Genre genre = genreRepository.findById(id).orElseThrow();
+        List<Movie> allByGenreId = movieRepository.findAllByGenreId(id);
+        allByGenreId
+                .stream()
+                .map(Movie::getId)
+                .forEach(ratingRepository::deleteRatingByMovieId);
+        allByGenreId
+                .stream()
+                .map(Movie::getId)
+                .forEach(movieRepository::deleteById);
+        genreRepository.delete(genre);
+    }
 }
+

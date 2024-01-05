@@ -6,4 +6,6 @@ import java.util.Optional;
 
 public interface RatingRepository extends CrudRepository<Rating,Long> {
     Optional<Rating> findByUser_EmailAndMovie_Id(String userEmail, Long movieId);
+
+    void deleteRatingByMovieId(Long id);
 }

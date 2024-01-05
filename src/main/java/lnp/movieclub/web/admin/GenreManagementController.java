@@ -3,6 +3,7 @@ package lnp.movieclub.web.admin;
 import lnp.movieclub.genre.GenreService;
 import lnp.movieclub.genre.dto.GenreDto;
 import lnp.movieclub.genre.dto.GenreSaveDto;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +14,9 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@AllArgsConstructor
 public class GenreManagementController {
     private final GenreService genreService;
-
-    public GenreManagementController(GenreService genreService) {
-        this.genreService = genreService;
-    }
     //dodawanie gatunku
     @GetMapping("/admin/dodaj-gatunek")
     public String addGenreForm(Model model){
@@ -38,7 +36,7 @@ public class GenreManagementController {
             genreService.addGenre(genreDto);
             redirectAttributes.addFlashAttribute(
                     AdminController.NOTIFICATION_ATTRIBUTE,
-                    "Gatunek %s zistał zapisany".formatted(genreDto.getName())
+                    "Gatunek %s został zapisany".formatted(genreDto.getName())
             );
         }
         return "redirect:/admin";
@@ -61,4 +59,16 @@ public class GenreManagementController {
         );
         return "redirect:/admin";
     }
+
+    //usuwanie gatunku
+    @PostMapping("/admin/usun-gatunek/{id}")
+    public String deleteGenre(@PathVariable Long id, RedirectAttributes redirectAttributes){
+        genreService.deleteGenre(id);
+        redirectAttributes.addFlashAttribute(
+                AdminController.NOTIFICATION_ATTRIBUTE,
+                "Gatunek został usunięty"
+        );
+        return "redirect:/admin";
+    }
+
 }

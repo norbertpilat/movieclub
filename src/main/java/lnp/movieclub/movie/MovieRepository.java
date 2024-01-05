@@ -10,6 +10,7 @@ import java.util.List;
 public interface MovieRepository extends CrudRepository<Movie,Long> {
     List<Movie> findAllByPromotedIsTrue();
     List<Movie> findAllByGenre_NameIgnoreCase(String genre);
+    List<Movie> findAllByGenreId(Long id);
     @Query("select m from Movie m join m.ratings r group by m order by avg(r.rating) desc")
     List<Movie> findTopByRating(Pageable page);
 }
