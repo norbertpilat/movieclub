@@ -70,5 +70,4 @@ public class GenreManagementController {
         );
         return "redirect:/admin";
     }
-
 }

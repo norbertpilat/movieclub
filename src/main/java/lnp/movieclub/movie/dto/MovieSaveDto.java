@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Getter
 @Setter
 public class MovieSaveDto {
+    private Long id;
     private String title;
     private String originalTitle;
     private String shortDescription;
