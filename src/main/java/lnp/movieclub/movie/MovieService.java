@@ -4,10 +4,13 @@ import lnp.movieclub.genre.Genre;
 import lnp.movieclub.genre.GenreRepository;
 import lnp.movieclub.movie.dto.MovieDto;
 import lnp.movieclub.movie.dto.MovieSaveDto;
+import lnp.movieclub.rating.Rating;
+import lnp.movieclub.rating.RatingRepository;
 import lnp.movieclub.storage.FileStorageService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +20,7 @@ import java.util.Optional;
 public class MovieService {
     private final MovieRepository movieRepository;
     private final GenreRepository genreRepository;
+    private final RatingRepository ratingRepository;
     private final FileStorageService fileStorageService;
 
     public List<MovieDto> findAllPromotedMovies(){
@@ -63,6 +67,19 @@ public class MovieService {
     }
 
     //edytuj film
+    @Transactional
+    public void editMovie(MovieSaveDto movie) {
+        Movie movieFromDb = movieRepository.findByTitleIgnoreCase(movie.getTitle()).orElseThrow();
+        movieFromDb.setTitle(movie.getTitle());
+        movieFromDb.setOriginalTitle(movie.getOriginalTitle());
+        movieFromDb.setReleaseYear(movie.getReleaseYear());
+        movieFromDb.setShortDescription(movie.getShortDescription());
+        movieFromDb.setDescription(movie.getDescription());
+        movieFromDb.setYoutubeTrailerId(movie.getYoutubeTrailerId());
+        Genre genre = genreRepository.findByNameIgnoreCase(movie.getGenre()).orElseThrow();
+        movieFromDb.setGenre(genre);
+        movieFromDb.setPromoted(movie.isPromoted());
+        movieRepository.save(movieFromDb);
+    }
     //usun film
-
 }
