@@ -23,7 +23,7 @@ Interaktywna funkcja umożliwia użytkownikom przeglądanie filmów według ró�
 ## Instrukcje Uruchomienia Lokalnego Serwera
 #### 1.Sklonuj repozytorium do swojego lokalnego środowiska.
 ```bash
-git clone https://github.com/norbertpilat/MovieClub.git
+git clone https://github.com/norbertpilat/movieclub.git
 ```
 
 #### 2.Uruchom aplikację na lokalnym serwerze przy użyciu narzędzi takich jak Maven lub inne zależne od używanej technologii.
