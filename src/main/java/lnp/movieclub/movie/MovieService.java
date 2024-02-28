@@ -4,7 +4,6 @@ import lnp.movieclub.genre.Genre;
 import lnp.movieclub.genre.GenreRepository;
 import lnp.movieclub.movie.dto.MovieDto;
 import lnp.movieclub.movie.dto.MovieSaveDto;
-import lnp.movieclub.rating.Rating;
 import lnp.movieclub.rating.RatingRepository;
 import lnp.movieclub.storage.FileStorageService;
 import lombok.AllArgsConstructor;
@@ -34,12 +33,13 @@ public class MovieService {
         return movieRepository.findById(id).map(MovieDtoMapper::mapper);
     }
 
-    public List<MovieDto> findMoviesByGenreName(String genre){
+    public List<MovieDto> findMoviesByGenreName(String genre) {
         return movieRepository.findAllByGenre_NameIgnoreCase(genre)
                 .stream()
                 .map(MovieDtoMapper::mapper)
                 .toList();
     }
+
 
     public void addMovie(MovieSaveDto movieToSave){
         Movie movie = new Movie();
