@@ -18,8 +18,6 @@ public class RatingService {
 
 
     public void addOrUpdateRating(String userEmail, long movieId, int rating){
-        //sprawdzanie czy została oddana ocena przez user o podanym adresie email,
-        // jeżeli tak to zostanie zaktualizowana jeżeli nie to zostanie utworzona nowa
         Rating ratingToSaveOrUpdate = ratingRepository.findByUser_EmailAndMovie_Id(userEmail, movieId)
                 .orElseGet(Rating::new);
         User user = userRepository.findByEmail(userEmail).orElseThrow();

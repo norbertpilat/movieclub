@@ -1,4 +1,4 @@
-package lnp.movieclub.rating;
+package lnp.movieclub.comment;
 
 import jakarta.persistence.*;
 import lnp.movieclub.movie.Movie;
@@ -7,10 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "movie_rating")
-@NoArgsConstructor
+@Table(name = "movie_comment")
 @Data
-public class Rating {
+@NoArgsConstructor
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,5 +20,5 @@ public class Rating {
     @ManyToOne
     @JoinColumn(name = "movie_id")
     private Movie movie;
-    private Integer rating;
+    private String content;
 }

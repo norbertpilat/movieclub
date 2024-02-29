@@ -1,5 +1,7 @@
 package lnp.movieclub.web;
 
+import lnp.movieclub.comment.Comment;
+import lnp.movieclub.comment.CommentService;
 import lnp.movieclub.movie.MovieService;
 import lnp.movieclub.movie.dto.MovieDto;
 import lnp.movieclub.rating.RatingService;
@@ -20,11 +22,15 @@ import java.util.List;
 public class MovieController {
     private final MovieService movieService;
     private final RatingService ratingService;
+    private final CommentService commentService;
 
     @GetMapping("/film/{id}")
     public String getMovie(@PathVariable long id, Model model, Authentication authentication){
         MovieDto movie = movieService.findMovieById(id)
                         .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        List<Comment> comments = commentService.getCommentsForMovie(id);
+        model.addAttribute("comments",comments);
+        model.addAttribute("username",authentication.getName());
         model.addAttribute("movie",movie);
         //jeżeli user jest zalogowany
         if (authentication != null){

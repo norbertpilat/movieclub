@@ -94,6 +94,27 @@
         tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
         faucibus.</p>
     </section>
+
+    <section class="movie-section">
+      <h2 class="movie-section-heading">Komentarze</h2>
+      <form class="mc-form">
+        <textarea class="" rows="5" placeholder="Napisz co myślicz o tym filmie..."></textarea>
+        <button type="submit">Dodaj</button>
+      </form>
+    </section>
+    <section class="movie-section">
+      <ul>
+        <li class="movie-list-item" th:each="comment : ${comments}">
+          <div class="movie-list-item-content">
+          <h3 class="movie-section-heading">Autor</h3>
+          <p th:text="${comment.content}">
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+            odio, vestibulum in vulputate at,
+          </p>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
 </div>
 </body>
