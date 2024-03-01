@@ -21,4 +21,10 @@ public class Comment {
     @JoinColumn(name = "movie_id")
     private Movie movie;
     private String content;
+
+    public Comment(User user, Movie movie, String content) {
+        this.user = user;
+        this.movie = movie;
+        this.content = content;
+    }
 }
