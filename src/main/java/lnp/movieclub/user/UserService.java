@@ -1,6 +1,7 @@
 package lnp.movieclub.user;
 
 import lnp.movieclub.user.dto.UserCredentialsDto;
+import lnp.movieclub.user.dto.UserDto;
 import lnp.movieclub.user.dto.UserRegistrationDto;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,12 @@ public class UserService {
         return userRepository.findByEmail(email)
                 .map(UserCredentialsDtoMapper::map);
     }
+
+    public Optional<UserDto> findUserByEmail(String email){
+        return userRepository.findByEmail(email)
+                .map(UserDtoMapper::map);
+    }
+
 
     @Transactional
     public void registrationUserWithDefaultRole(UserRegistrationDto userRegistration) {

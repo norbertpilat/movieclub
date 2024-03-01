@@ -17,14 +17,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @AllArgsConstructor
 public class GenreManagementController {
     private final GenreService genreService;
-    //dodawanie gatunku
+
     @GetMapping("/admin/dodaj-gatunek")
     public String addGenreForm(Model model){
         GenreDto genre = new GenreDto();
         model.addAttribute("genre",genre);
         return "admin/genre-form";
     }
-    //dodawanie gatunku
+
     @PostMapping("/admin/dodaj-gatunek")
     public String addGenre(GenreDto genreDto, RedirectAttributes redirectAttributes){
         if (genreService.findGenreByName(genreDto.getName()).isPresent()){
@@ -41,7 +41,7 @@ public class GenreManagementController {
         }
         return "redirect:/admin";
     }
-    //edytowanie gatunku
+
     @GetMapping("/admin/edytuj-gatunek/{name}")
     public String editGenreForm(@PathVariable String name, Model model){
         GenreDto genre = genreService.findGenreByName(name)
@@ -49,7 +49,7 @@ public class GenreManagementController {
         model.addAttribute("genre",genre);
         return "admin/edit-genre-form";
     }
-    //edytowanie gatunku
+
     @PostMapping("/admin/edytuj-gatunek")
     public String editGenre(GenreSaveDto genreDto, RedirectAttributes redirectAttributes){
         genreService.editGenre(genreDto);
@@ -60,7 +60,6 @@ public class GenreManagementController {
         return "redirect:/admin";
     }
 
-    //usuwanie gatunku
     @PostMapping("/admin/usun-gatunek/{id}")
     public String deleteGenre(@PathVariable Long id, RedirectAttributes redirectAttributes){
         genreService.deleteGenre(id);

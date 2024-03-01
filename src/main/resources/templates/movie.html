@@ -10,6 +10,9 @@
 <body>
 <div class="container">
   <main class="main-content" layout:fragment="content">
+    <p class="notification-bar" th:if="${notification}" th:text="${notification}">
+      Belka z powiadomieniami
+    </p>
     <section class="movie">
       <!-- Podsumowanie -->
       <div class="movie-summary">
@@ -93,6 +96,31 @@
         odio, vestibulum in vulputate at,
         tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
         faucibus.</p>
+    </section>
+
+    <section class="movie-section" >
+      <h2 class="movie-section-heading">Komentarze</h2>
+      <p sec:authorize="!isAuthenticated()">
+        <a href="#" th:href="@{/login}">Zaloguj się</a>, aby dodać komentarz
+      </p>
+      <form class="mc-form" th:action="|/film/${movie.id}|" method="post" th:object="${addComment}" sec:authorize="isAuthenticated()">
+        <h4 th:text="|Autor: ${addComment.userEmail}|"></h4>
+        <textarea class="" rows="5"  placeholder="Napisz co myślicz o tym filmie..." th:field="*{commentContent}"></textarea>
+        <button type="submit">Dodaj</button>
+      </form>
+    </section>
+    <section class="movie-section">
+      <ul>
+        <li class="movie-list-item" th:each="comment : ${comments}">
+          <div class="movie-list-item-content">
+          <h3 class="movie-section-heading" th:text="${comment.userEmail}">Autor</h3>
+          <p th:text="${comment.commentContent}">
+            Cras sit amet nibh libero , in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+            odio, vestibulum in vulputate at,
+          </p>
+          </div>
+        </li>
+      </ul>
     </section>
   </main>
 </div>
